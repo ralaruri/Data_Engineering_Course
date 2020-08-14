@@ -3,7 +3,6 @@
 #### 0. Prereqs to run this program 
 * Python 3.+ is required along with psycopg2, pandas libaries installed.
 * Utilzing psycopg2 might include the installation of Postgres if nto already installed on your machine.
-* order of running this
 
 #### 1. Purpose of Database
 * This database is built out using a star schema with a central fact table "songplays" and 4 dimensional tables users, songs, artists, time
@@ -80,8 +79,6 @@
 #### 5. Resources Used
  * Udacity Knowledge Q/A and Student Hub 
  * https://dba.stackexchange.com/questions/49768/duplicate-key-violates-unique-constraint
- * https://www.google.com/search?client=safari&rls=en&ei=pTguXpuKE8XJ5gLr84egCw&q=postgresql+datatypes&oq=postgresql+datatypes&gs_l=psy-ab.3..0i10l10.1998.3030..3145...0.2..0.79.732.10......0....1..gws-wiz.......0i71j0i67j0.ZedvhzcSv-0&ved=0ahUKEwjb8OG-zKLnAhXFpFkKHev5AbQQ4dUDCAo&uact=5
  * https://dba.stackexchange.com/questions/134493/upsert-with-on-conflict-using-values-from-source-table-in-the-update-part
- 
- *https://www.epochconverter.com
- *https://wiki.postgresql.org/wiki/Don%27t_Do_This
+ * https://www.epochconverter.com
+ * https://wiki.postgresql.org/wiki/Don%27t_Do_This
