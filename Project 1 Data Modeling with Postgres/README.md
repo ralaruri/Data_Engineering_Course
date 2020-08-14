@@ -1,17 +1,17 @@
-# Data Engineer Project 1/5 Data Modeling with Postgres
+# Project 1 Data Modeling with Postgres
 
-0. Prereqs to run this program 
+#### 0. Prereqs to run this program 
 * Python 3.+ is required along with psycopg2, pandas libaries installed.
 * Utilzing psycopg2 might include the installation of Postgres if nto already installed on your machine.
 * order of running this
 
-1. Purpose of Database
+#### 1. Purpose of Database
 * This database is built out using a star schema with a central fact table "songplays" and 4 dimensional tables users, songs, artists, time
 * The purpose of this is to build an analytic schema in order to be able to query the individual tables along with more complex joined queries
 * The complex join queries allow you to understand user behavior along with details of the songs and artist they listen to
 
 
-2. Database schema and ETL pipeline
+#### 2. Database schema and ETL pipeline
 * The data that is included in the database comes from two sets of datasets. Songs which are the details of the songs and artists, and log files which are the actual users utilizing the steaming service.
 * The Songplays as mentioned before is central to this start schemea it includes a user_id , song_id, artist_id, startime fields that are able to join directly to the users table, songs table, artists table, and time table respectively. 
 * The data files are in the json data type that requires some tranformation using Pandas.
@@ -20,7 +20,7 @@
     2. Building the ETL process for each table in the etl.py file; most json files were easy to read and process, some cause diffcuility such as the time table which required some more extensive transformation especially if not fimialr with timestamps and utilziation of them. 
 
 
-3. Example Queries
+#### 3. Example Queries
     1. SELECT count(distinct user_id), level FROM users group by level;
     * with this query you are able to figure out the amount of paid vs. free users quickly querying a single table that isn't clutter with non-nesscary fields. with high read performance 
     
@@ -56,7 +56,7 @@
         susitaining customers. 
 
 
-4. Issues 
+#### 4. Issues 
     1. Timestamp issue in the time table, timestamptz, or timestamp data types do not function with the
         dataframe the inset statement.
         * solution: you need to use type time. 
@@ -75,9 +75,9 @@
             DETAIL:  Key (start_time)=(17:18:01.796) already exists.
         * defaulted to the above quick fix (issue 3) due to having duplicate timestamps is feasible
 
-* After these fixes it complied etl.py and I was able to query the database!!
+* After these fixes it complied etl.py and I was able to query the database
 
-5. Resources Used
+#### 5. Resources Used
  * Udacity Knowledge Q/A and Student Hub 
  * https://dba.stackexchange.com/questions/49768/duplicate-key-violates-unique-constraint
  * https://www.google.com/search?client=safari&rls=en&ei=pTguXpuKE8XJ5gLr84egCw&q=postgresql+datatypes&oq=postgresql+datatypes&gs_l=psy-ab.3..0i10l10.1998.3030..3145...0.2..0.79.732.10......0....1..gws-wiz.......0i71j0i67j0.ZedvhzcSv-0&ved=0ahUKEwjb8OG-zKLnAhXFpFkKHev5AbQQ4dUDCAo&uact=5
